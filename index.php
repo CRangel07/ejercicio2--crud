@@ -86,6 +86,10 @@
                         <td><?php echo $row['material_precio'];?></td>
                         <td><?php echo $row['material_stock'];?></td>
                         <td><?php echo $row['material_total'];?></td>
+                        <td>
+                            <a href="editMaterial.php?id=<?php echo $row['material_ID'];?>">Editar</a>
+                            <a href="deleteMaterial.php?id=<?php echo $row['material_ID'];?>">Eliminar</a>
+                        </td>
                     </tr>
 
                 <?php }
