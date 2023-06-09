@@ -22,6 +22,11 @@
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <a href="index.php" class="btn btn-primary mt-2">Mostrar Todos</a>
+            </div>
+        </div>
     </div>
 
 
@@ -41,7 +46,7 @@
                     <input type="radio" name="um" value="Litros" required autocomplete="off">
                     <label for="nombre">Pieza</label>
                     <input type="radio" name="um" value="Piezas" required autocomplete="off">
-                       
+
                 </div>
             </div>
             <div class="entrada">
@@ -75,30 +80,32 @@
             </thead>
             <tbody>
                 <?php
-                $sql = 'SELECT * FROM materiales';
-                $results_materials = mysqli_query($conn, $sql);
 
-                while($row = mysqli_fetch_array($results_materials)){ ?>
-                    <tr>
-                        <td><?php echo $row['material_nombre'];?></td>
-                        <td><?php echo $row['material_unidad'];?></td>
-                        <td><?php echo $row['material_precio'];?></td>
-                        <td><?php echo $row['material_stock'];?></td>
-                        <td><?php echo $row['material_total'];?></td>
-                        <td>
-                            <a href="editMaterial.php?id=<?php echo $row['material_ID'];?>">Editar</a>
-                            <a href="deleteMaterial.php?id=<?php echo $row['material_ID'];?>">Eliminar</a>
-                        </td>
-                    </tr>
+                if (isset($_POST['search'])) {
+                    $texto = strtoupper($_POST['texto-buscar']);
+                    $sql = "SELECT * FROM materiales WHERE material_nombre LIKE '%$texto%';";
+                    $results_materials = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_array($results_materials)) { ?>
+                        <tr>
+                            <td><?php echo $row['material_nombre']; ?></td>
+                            <td><?php echo $row['material_unidad']; ?></td>
+                            <td><?php echo $row['material_precio']; ?></td>
+                            <td><?php echo $row['material_stock']; ?></td>
+                            <td><?php echo $row['material_total']; ?></td>
+                            <td>
+                                <a href="editMaterial.php?id=<?php echo $row['material_ID']; ?>">Editar</a>
+                                <a href="deleteMaterial.php?id=<?php echo $row['material_ID']; ?>">Eliminar</a>
+                            </td>
+                        </tr>
 
                 <?php }
-
+                }
                 ?>
             </tbody>
         </table>
     </div>
 
-    <?php include("footer.php");?>
+    <?php include("footer.php"); ?>
 </body>
 
 </html>
