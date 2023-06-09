@@ -6,7 +6,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="./index.php" class="navbar-brand">CRUD</a>
+            <a href="./index.php" class="navbar-brand">CRUD - Materiales de Construccion</a>
         </div>
     </nav>
 
@@ -16,7 +16,7 @@
                 <button type="button" class="btn btn-primary" id="btn-agregar">Agregar Nuevo</button>
             </div>
             <div class="col-12 col-xl-9 col-sm-7">
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" action="index.php" method="POST">
                     <input class="form-control me-2" type="search" placeholder="Ingresa el nombre de un material" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
@@ -30,11 +30,19 @@
         <form action="newMaterial.php" method="POST" class="add-material bg-dark">
             <div class="entrada">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" required>
+                <input type="text" name="nombre" id="nombre" autocomplete="off" required>
             </div>
             <div class="entrada">
-                <label for="nombre">Unidad de Medida</label>
-                <input type="text" name="um" id="um" required>
+                <div class="um">Unidad de medida</div>
+                <div class="radios">
+                    <label for="nombre">Kg</label>
+                    <input type="radio" name="um" value="Kilogramos" required autocomplete="off">
+                    <label for="nombre">Litro</label>
+                    <input type="radio" name="um" value="Litros" required autocomplete="off">
+                    <label for="nombre">Pieza</label>
+                    <input type="radio" name="um" value="Piezas" required autocomplete="off">
+                       
+                </div>
             </div>
             <div class="entrada">
                 <label for="nombre">Precio</label>

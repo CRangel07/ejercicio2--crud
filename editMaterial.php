@@ -17,8 +17,8 @@
 
     if(isset($_POST['update'])){
         $id = $_GET['id'];
-        $nombre = $_POST['nombre'];
-        $unidad = $_POST['um'];
+        $nombre = strtoupper($_POST['nombre']);
+        $unidad = strtoupper($_POST['um']);
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
 
