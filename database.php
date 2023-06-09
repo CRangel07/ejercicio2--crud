@@ -1,6 +1,8 @@
 
 <?php 
 
+session_start();
+
 $conn = mysqli_connect(
     'localhost',
     'root',
@@ -8,8 +10,5 @@ $conn = mysqli_connect(
     'crud-cemento'
 );
 
-if(isset($conn)){
-    echo "Base de datos conedctaddsfa";
-}
 
 ?>

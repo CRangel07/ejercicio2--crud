@@ -33,8 +33,10 @@
         </div>
     </div>
 
+
     <div class="material">
-        <form action="newMaterial.php" method="POST" class="add-material">
+
+        <form action="newMaterial.php" method="POST" class="add-material bg-dark">
             <div class="entrada">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" required>
@@ -61,13 +63,36 @@
     </div>
 
     <div class="container mt-4">
-        <div class="row">
-            <div class="col">Nombre</div>
-            <div class="col">Unidad de medida</div>
-            <div class="col">Precio</div>
-            <div class="col">Stock</div>
-            <div class="col">Total</div>
-        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Unidad de medida</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = 'SELECT * FROM materiales';
+                $results_materials = mysqli_query($conn, $sql);
+
+                while($row = mysqli_fetch_array($results_materials)){ ?>
+                    <tr>
+                        <td><?php echo $row['material_nombre'];?></td>
+                        <td><?php echo $row['material_unidad'];?></td>
+                        <td><?php echo $row['material_precio'];?></td>
+                        <td><?php echo $row['material_stock'];?></td>
+                        <td><?php echo $row['material_total'];?></td>
+                    </tr>
+
+                <?php }
+
+                ?>
+            </tbody>
+        </table>
     </div>
 
 

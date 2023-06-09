@@ -2,7 +2,9 @@ html{
     scroll-behavior: smooth;
 }
 
-
+label{
+    color: whitesmoke;
+}
 .material{
     display: none;
     width: 80%;
@@ -15,7 +17,6 @@ html{
     flex-direction: column;
     border: 1px solid #3f3f3f;
     border-radius: 5px;
-    background-color: lightgray;
 }
 .entrada{
     display: flex;
@@ -29,6 +30,7 @@ html{
 }
 
 .boton-cerrar{
+    border: none;
     cursor: pointer;
     height: 30px;
     background-color: lightcoral;
