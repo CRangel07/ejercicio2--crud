@@ -11,11 +11,11 @@ if (isset($_GET['id'])) {
         $row = mysqli_fetch_array($count);
         $stock = $row['material_stock'];
         if ($stock >= 1) {
-            header("Location: index.php");
+            header("Location: ../index.php");
         } else {
             $sql = "DELETE FROM materiales WHERE material_ID = $id";
             $result = mysqli_query($conn, $sql);
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
     }
 }

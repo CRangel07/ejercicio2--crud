@@ -6,7 +6,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="./index.php" class="navbar-brand">CRUD - Materiales de Construccion</a>
+            <a href="../index.php" class="navbar-brand">CRUD - Materiales de Construccion</a>
         </div>
     </nav>
 
@@ -17,14 +17,14 @@
             </div>
             <div class="col-12 col-xl-9 col-sm-7">
                 <form class="d-flex" role="search" action="busqueda.php" method="POST">
-                    <input name="texto-buscar" class="form-control me-2" type="search" placeholder="Ingresa el nombre de un material" aria-label="Search">
+                    <input name="texto-buscar" class="form-control me-2" type="search" placeholder="Ingresa el nombre de un material" aria-label="Search" autocomplete="off">
                     <button class="btn btn-outline-success" type="submit" name="search">Buscar</button>
                 </form>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <a href="index.php" class="btn btn-primary mt-2">Mostrar Todos</a>
+                <a href="../index.php" class="btn btn-primary mt-2">Mostrar Todos</a>
             </div>
         </div>
     </div>

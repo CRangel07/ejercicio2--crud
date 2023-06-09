@@ -18,6 +18,6 @@ if(isset($_POST['agregar_material'])){
 
     $_SESSION['message'] = 'Material agregado correctamente';
 
-    header("Location: index.php");
+    header("Location: ../index.php");
 
 }
